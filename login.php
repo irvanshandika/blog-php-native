@@ -11,9 +11,16 @@
 </head>
 
 <body class="flex justify-center items-center min-h-screen bg-gray-100">
-
     <div class="w-96 p-8 bg-white rounded shadow-lg">
-        <h1 class="text-2xl font-semibold mb-4">Login</h1>
+        <div class="flex justify-center mb-4">
+            <a href="#" class="flex items-center">
+                <div class="w-36 mr-3">
+                    <?php
+                    include_once './src/components/logo.php'
+                    ?>
+                </div>
+            </a>
+        </div>
         <?php if (isset($login_error) && $login_error) : ?>
             <p class="text-red-500 mb-4">Username atau password salah.</p>
         <?php endif; ?>
