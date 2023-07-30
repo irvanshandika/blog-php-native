@@ -9,34 +9,7 @@
     <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
         <ul class="space-y-2 font-medium">
             <li>
-                <?php
-                // Cek apakah $_SESSION['nama_admin'] sudah di-set sebelumnya
-                if (isset($_SESSION['nama_admin'])) {
-                    $greetings = getGreetings();
-                    echo "<h1>{$greetings}, {$_SESSION['nama_admin']}!</h1>";
-                } else {
-                    echo "<h1>Selamat Datang!</h1>";
-                }
-
-                function getGreetings()
-                {
-                    $hours = date('H');
-
-                    $greetings;
-
-                    if ($hours >= 5 && $hours < 12) {
-                        $greetings = "Selamat Pagi";
-                    } else if ($hours >= 12 && $hours < 15) {
-                        $greetings = "Selamat Siang";
-                    } else if ($hours >= 15 && $hours < 22) {
-                        $greetings = "Selamat Sore";
-                    } else {
-                        $greetings = "Selamat Malam";
-                    }
-
-                    return $greetings;
-                }
-                ?>
+                <h1 class="text-lg font-semibold"><span id="greetings"></span> <span><?php echo $_SESSION['nama_admin']; ?></span> !</h1>
             </li>
             <li>
                 <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
@@ -102,3 +75,27 @@
         </ul>
     </div>
 </aside>
+
+<script>
+    function getGreetings() {
+        var today = new Date();
+        var hours = today.getHours();
+
+        var greetings;
+
+        if (hours >= 5 && hours < 12) {
+            greetings = "Selamat Pagi";
+        } else if (hours >= 12 && hours < 15) {
+            greetings = "Selamat Siang";
+        } else if (hours >= 15 && hours < 22) {
+            greetings = "Selamat Sore";
+        } else {
+            greetings = "Selamat Malam";
+        }
+
+        return greetings;
+    }
+
+    var greetingsText = getGreetings();
+    document.getElementById("greetings").innerText = greetingsText;
+</script>
