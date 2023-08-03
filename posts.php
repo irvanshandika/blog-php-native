@@ -3,7 +3,7 @@ session_start();
 
 // Cek apakah sudah login atau belum
 if (!isset($_SESSION['id_admin'])) {
-    header("Location: login.php");
+    header("Location: restrict.php");
     exit;
 }
 ?>

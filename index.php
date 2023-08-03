@@ -15,7 +15,7 @@
     <?php
     include_once './src/components/navbar.php'
     ?>
-    <div id="default-carousel" class="relative w-full" data-carousel="slide">
+    <div id="default-carousel" class="relative w-full z-0" data-carousel="slide">
         <!-- Carousel wrapper -->
         <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
             <!-- Item 1 -->
@@ -95,11 +95,10 @@
             <div class="flex justify-center">
                 <div class="max-w-sm mt-8 p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><?= $value['judul'] ?></h5>
-                    <!-- Memotong dan menampilkan teks konten dengan blur -->
                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 line-clamp-3">
                         <?= $value['konten'] ?>
                     </p>
-                    <p class="mb-3 font-normal text-white dark:text-gray-400 bg-blue-500 rounded-lg p-2"># <?= $value['kategori'] ?></p>
+                    <p class="mb-3"><span class="font-normal text-white dark:text-gray-400 bg-blue-500 rounded-lg p-2"><?= $value['kategori'] ?></span></p>
                     <a href="view.php?id=<?= $value['id']?>" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                         Read more
                         <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
