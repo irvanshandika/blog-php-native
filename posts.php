@@ -72,7 +72,7 @@ if (!isset($_SESSION['id_admin'])) {
                                     <td class="px-6 py-4">
                                         <?= $value['kategori'] ?>
                                     </td>
-                                    <td class="px-6 py-4">
+                                    <td class="px-6 py-4 line-clamp-4">
                                         <?= $value['konten'] ?>
                                     </td>
                                     <td class="px-6 py-4">
@@ -81,7 +81,7 @@ if (!isset($_SESSION['id_admin'])) {
                                     <td class="px-6 py-4">
                                         <?= $value['created_at'] ?>
                                     </td>
-                                    <td class="flex items-center px-6 py-4 space-x-3">
+                                    <td class="items-center px-6 py-4 space-x-3">
                                         <a href="create-posts.php?id=<?= $value['id'] ?>" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                                         <a href="posts-function.php?id=<?= $value['id'] ?>" class="font-medium text-red-600 dark:text-red-500 hover:underline">Remove</a>
                                     </td>
