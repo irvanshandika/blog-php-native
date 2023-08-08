@@ -129,7 +129,7 @@
                     </div>
                     <p class="mb-3 mt-10"><span class="font-normal text-white bg-blue-500 rounded-lg p-2"><?= $value['kategori'] ?></span></p>
                     <a href="/view?id=<?= $value['id'] ?>" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg focus:ring-4 focus:outline-none bg-blue-600 hover:bg-blue-700 focus:ring-blue-800">
-                        Read more
+                        Baca Selanjutnya
                         <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
                         </svg>
