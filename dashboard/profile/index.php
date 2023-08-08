@@ -15,9 +15,10 @@ if (!isset($_SESSION['id_admin'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Irvan Blog - User</title>
-    <link rel="stylesheet" href="../../src/style/style.css">
-    <link rel="stylesheet" href="../../dist/output.css">
-    <link rel="stylesheet" href="../../node_modules/flowbite/dist/flowbite.min.css">
+    <link rel="stylesheet" href="/src/style/style.css">
+    <link rel="stylesheet" href="/dist/output.css">
+    <link rel="stylesheet" href="/node_modules/flowbite/dist/flowbite.min.css">
+    <link rel="stylesheet" href="/node_modules/quill/dist/quill.snow.css">
 </head>
 
 <body class="bg-gray-700">
@@ -37,8 +38,10 @@ if (!isset($_SESSION['id_admin'])) {
         include_once '../../src/components/footer.php';
         ?>
     </div>
-    <script src="../../src/script/script.js"></script>
-    <script src="../../node_modules/flowbite/dist/flowbite.min.js"></script>
+    <script src="/node_modules/quill/dist/quill.js"></script>
+    <script src="/node_modules/quill/dist/quill.min.js"></script>
+    <script src="/src/script/script.js"></script>
+    <script src="/node_modules/flowbite/dist/flowbite.min.js"></script>
 </body>
 
 </html>

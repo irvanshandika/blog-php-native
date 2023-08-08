@@ -19,9 +19,10 @@
         }
     }
     ?>
-    <link rel="stylesheet" href="../src/style/style.css">
-    <link rel="stylesheet" href="../dist/output.css">
-    <link rel="stylesheet" href="../node_modules/flowbite/dist/flowbite.min.css">
+    <link rel="stylesheet" href="/src/style/style.css">
+    <link rel="stylesheet" href="/dist/output.css">
+    <link rel="stylesheet" href="/node_modules/flowbite/dist/flowbite.min.css">
+    <link rel="stylesheet" href="/node_modules/quill/dist/quill.snow.css">
 </head>
 
 <body class="bg-gray-700">
@@ -65,8 +66,10 @@
     <?php
     include_once '../src/components/footer.php'
     ?>
-    <script src="../src/script/script.js"></script>
-    <script src="../node_modules/flowbite/dist/flowbite.min.js"></script>
+    <script src="/node_modules/quill/dist/quill.js"></script>
+    <script src="/node_modules/quill/dist/quill.min.js"></script>
+    <script src="/src/script/script.js"></script>
+    <script src="/node_modules/flowbite/dist/flowbite.min.js"></script>
 </body>
 
 </html>

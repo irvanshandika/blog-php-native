@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="./src/style/style.css">
     <link rel="stylesheet" href="./dist/output.css">
+    <link rel="stylesheet" href="/node_modules/quill/dist/quill.snow.css">
     <link rel="stylesheet" href="./node_modules/flowbite/dist/flowbite.min.css">
 </head>
 
@@ -123,9 +124,9 @@
                 <div class="max-w-sm mt-8 mb-4 mx-4 p-6 rounded-lg shadow bg-gray-800 border-gray-700">
                     <div class="hidden"><?= $no ?></div>
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-white"><?= $value['judul'] ?></h5>
-                    <p class="mb-3 font-normal text-gray-400 line-clamp-3">
-                        <?= $value['konten'] ?>
-                    </p>
+                    <div class="mb-3 font-normal text-gray-400 line-clamp-3">
+                        <?= substr($value['konten'], 0, 150) . (strlen($value['konten']) > 150 ? '...' : '') ?>
+                    </div>
                     <p class="mb-3 mt-10"><span class="font-normal text-white bg-blue-500 rounded-lg p-2"><?= $value['kategori'] ?></span></p>
                     <a href="/view?id=<?= $value['id'] ?>" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg focus:ring-4 focus:outline-none bg-blue-600 hover:bg-blue-700 focus:ring-blue-800">
                         Read more
@@ -134,6 +135,7 @@
                         </svg>
                     </a>
                 </div>
+
             <?php
                 $no++;
             }
@@ -193,6 +195,8 @@
     <?php
     include_once './src/components/footer.php'
     ?>
+    <script src="/node_modules/quill/dist/quill.js"></script>
+    <script src="/node_modules/quill/dist/quill.min.js"></script>
     <script src="./src/script/script.js"></script>
     <script src="./node_modules/flowbite/dist/flowbite.min.js"></script>
 
