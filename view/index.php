@@ -55,9 +55,10 @@
                         </div>
                     </div>
                     <p class="text-lg lg:text-base mt-3 text-center text-white"><?= $value['created_at'] ?></p>
-                    <p class="text-lg lg:text-base mt-3 text-center text-white"><?= $value['konten'] ?></p>
+                    <div class="text-white text-lg lg:text-base mt-3 text-center"><?= $value['konten'] ?></div>
                 </div>
             </div>
+
     <?php
         }
     }

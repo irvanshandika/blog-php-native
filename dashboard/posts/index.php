@@ -98,8 +98,8 @@ if (!isset($_SESSION['id_admin'])) {
                                     <td class="px-6 py-4">
                                         <?= $value['kategori'] ?>
                                     </td>
-                                    <td class="px-6 py-4 line-clamp-4">
-                                        <?= $value['konten'] ?>
+                                    <td class="px-6 py-4 line-clamp-3">
+                                        <?= substr($value['konten'], 0, 150) . (strlen($value['konten']) > 150 ? '...' : '') ?>
                                     </td>
                                     <td class="px-6 py-4">
                                         <?= $value['penulis'] ?>
