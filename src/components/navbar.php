@@ -61,7 +61,7 @@
                     </div>
                 </li>
                 <li>
-                    <a href="#" class="block py-2 pl-3 pr-4 rounded md:border-0 md:hover:text-blue-700 md:p-0 text-white hover:bg-gray-900 hover:text-white md:hover:bg-transparent">Services</a>
+                    <a href="/services" class="block py-2 pl-3 pr-4 rounded md:border-0 md:hover:text-blue-700 md:p-0 text-white hover:bg-gray-900 hover:text-white md:hover:bg-transparent">Services</a>
                 </li>
                 <li>
                     <a href="#" class="block py-2 pl-3 pr-4 rounded md:border-0 md:hover:text-blue-700 md:p-0 text-white hover:bg-gray-900 hover:text-white md:hover:bg-transparent">Pricing</a>

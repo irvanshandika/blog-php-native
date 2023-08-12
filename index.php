@@ -83,68 +83,69 @@
     </div>
 
     <!-- Card ui -->
+    <div class="mx-auto my-4 max-w-7xl">
+        <div class="grid grid-cols-1 gap-1 mt-4 md:grid-cols-2 lg:grid-cols-3">
 
-    <div class="flex lg:flex-row flex-col justify-center">
-        <?php
-        include_once 'koneksi.php';
+            <?php
+            include_once 'koneksi.php';
 
-        $batas = 5;
-        extract($_GET);
+            $batas = 5;
+            extract($_GET);
 
-        if (empty($hal)) {
-            $posisi = 0;
-            $hal = 1;
-            $no = 1;
-        } else {
-            $posisi = ($hal - 1) * $batas;
-            $no = $posisi + 1;
-        }
+            if (empty($hal)) {
+                $posisi = 0;
+                $hal = 1;
+                $no = 1;
+            } else {
+                $posisi = ($hal - 1) * $batas;
+                $no = $posisi + 1;
+            }
 
-        if (@$_POST['pencarian']) {
-            $pencarian = trim(mysqli_real_escape_string($koneksi, $_POST['pencarian']));
-            if ($pencarian != "") {
-                $query = "SELECT * FROM posts WHERE
+            if (@$_POST['pencarian']) {
+                $pencarian = trim(mysqli_real_escape_string($koneksi, $_POST['pencarian']));
+                if ($pencarian != "") {
+                    $query = "SELECT * FROM posts WHERE
                     judul LIKE '%$pencarian%'
                     OR kategori like '%$pencarian%'";
-                $queryJml = $query;
+                    $queryJml = $query;
+                } else {
+                    $query = "SELECT * FROM posts LIMIT $posisi, $batas";
+                    $queryJml = "SELECT * FROM posts";
+                }
             } else {
                 $query = "SELECT * FROM posts LIMIT $posisi, $batas";
                 $queryJml = "SELECT * FROM posts";
             }
-        } else {
-            $query = "SELECT * FROM posts LIMIT $posisi, $batas";
-            $queryJml = "SELECT * FROM posts";
-        }
 
-        $data_posts = mysqli_query($koneksi, $query);
-        if (mysqli_num_rows($data_posts) > 0) {
-            foreach ($data_posts as $key => $value) {
+            $data_posts = mysqli_query($koneksi, $query);
+            if (mysqli_num_rows($data_posts) > 0) {
+                foreach ($data_posts as $key => $value) {
 
-        ?>
-                <div class="max-w-sm mt-8 mb-4 mx-4 p-6 rounded-lg shadow bg-gray-800 border-gray-700">
-                    <div class="hidden"><?= $no ?></div>
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-white"><?= $value['judul'] ?></h5>
-                    <div class="mb-3 font-normal text-gray-400 line-clamp-3">
-                        <?= substr($value['konten'], 0, 150) . (strlen($value['konten']) > 150 ? '...' : '') ?>
-                    </div>
-                    <p class="mb-3 mt-10"><span class="font-normal text-white bg-blue-500 rounded-lg p-2"><?= $value['kategori'] ?></span></p>
-                    <a href="/view?id=<?= $value['id'] ?>" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg focus:ring-4 focus:outline-none bg-blue-600 hover:bg-blue-700 focus:ring-blue-800">
-                        Baca Selanjutnya
-                        <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                        </svg>
-                    </a>
-                </div>
-
-            <?php
-                $no++;
-            }
-        } else {
             ?>
-            <h1 class="text-center text-white">Data Tidak Ditemukan!</h1>
-        <?php
-        }
-        ?>
+                    <div class="max-w-sm mt-8 mb-4 mx-4 p-6 rounded-lg shadow bg-gray-800 border-gray-700">
+                        <div class="hidden"><?= $no ?></div>
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-white"><?= $value['judul'] ?></h5>
+                        <div class="mb-3 font-normal text-gray-400 line-clamp-3">
+                            <?= substr($value['konten'], 0, 150) . (strlen($value['konten']) > 150 ? '...' : '') ?>
+                        </div>
+                        <p class="mb-3 mt-10"><span class="font-normal text-white bg-blue-500 rounded-lg p-2"><?= $value['kategori'] ?></span></p>
+                        <a href="/view?id=<?= $value['id'] ?>" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg focus:ring-4 focus:outline-none bg-blue-600 hover:bg-blue-700 focus:ring-blue-800">
+                            Baca Selanjutnya
+                            <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                            </svg>
+                        </a>
+                    </div>
+                <?php
+                    $no++;
+                }
+            } else {
+                ?>
+                <h1 class="text-center text-white">Data Tidak Ditemukan!</h1>
+            <?php
+            }
+            ?>
+        </div>
     </div>
     <div class="flex justify-center">
         <?php
