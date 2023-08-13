@@ -5,13 +5,13 @@ $idposts = $_POST['idposts'];
 $judul = $_POST['judul'];
 $konten = $_POST['konten'];
 $kategori = $_POST['kategori'];
-$nama = $_POST['nama'];
+$penulis = $_POST['penulis'];
 
 
 // Insert  
 if (@$_POST) {
 
-    $query = "INSERT INTO posts (idposts, judul, konten, kategori, nama) VALUES ('$idposts', '$judul', '$konten', '$kategori', '$nama')";
+    $query = "INSERT INTO posts (idposts, judul, konten, kategori, penulis) VALUES ('$idposts', '$judul', '$konten', '$kategori', '$penulis')";
 }
 
 // Update
@@ -21,7 +21,7 @@ if (@$_POST['id']) {
                 judul = '$judul', 
                 konten = '$konten', 
                 kategori = '$kategori',
-                nama = '$nama'
+                penulis = '$penulis'
                     WHERE id = '$_POST[id]'";
 }
 // Delete
