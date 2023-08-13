@@ -13,8 +13,8 @@ if ($_POST['submit']) {
 
     if (@$sesi['id_admin']) {
         $_SESSION['id_admin'] = $sesi['id_admin'];
-        $_SESSION['sesi'] = $sesi['nama_admin'];
-        $_SESSION['nama_admin'] = $sesi['nama_admin'];
+        $_SESSION['sesi'] = $sesi['nama'];
+        $_SESSION['nama'] = $sesi['nama'];
 
         echo "<script>alert('Anda Berhasil Login!');</script>";
         echo '<meta http-equiv="refresh" content="0; url=/dashboard">';

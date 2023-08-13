@@ -79,7 +79,7 @@ if (!isset($_SESSION['id_admin'])) {
     <script src="/node_modules/flowbite/dist/flowbite.min.js"></script>
     <script>
         var toolbarOptions = [
-            ['bold', 'italic', 'underline', 'strike', 'image'], // toggled buttons
+            ['bold', 'italic', 'underline', 'strike', 'image', 'video'], // toggled buttons
             ['blockquote', 'code-block'],
 
             [{

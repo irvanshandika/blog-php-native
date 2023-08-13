@@ -12,7 +12,7 @@
     <div class="h-full px-3 py-4 overflow-y-auto bg-gray-800">
         <ul class="space-y-2 font-medium">
             <li>
-                <h1 class="text-lg font-semibold text-white"><span id="greetings"></span> <span class=""><?php echo $_SESSION['nama_admin']; ?></span> !</h1>
+                <h1 class="text-lg font-semibold text-white"><span id="greetings"></span> <span class=""><?php echo $_SESSION['nama']; ?></span> !</h1>
             </li>
             <li>
                 <a href="/dashboard" class="flex items-center p-2 rounded-lg text-white hover:bg-gray-700 group">
