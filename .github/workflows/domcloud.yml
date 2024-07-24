@@ -3,7 +3,7 @@ name: Sync on DOM Cloud
   workflow_dispatch: {}
   push:
     branches:
-      - master
+      - main
 jobs:
   push:
     runs-on: ubuntu-latest
