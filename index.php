@@ -17,6 +17,7 @@
     include_once './src/components/navbar.php'
     ?>
     <div id="default-carousel" class="relative w-full z-0" data-carousel="slide">
+        <h1>Halo Dunia</h1>
         <!-- Carousel wrapper -->
         <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
             <!-- Item 1 -->
